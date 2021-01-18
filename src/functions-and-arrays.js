@@ -58,6 +58,49 @@ function netPrice(numbers)
   return temp;
  }
 }
+//3.1 Add
+function add (numbers)
+{
+  if(numbers.length == 0)
+  {
+    return 0;
+  }
+  else
+  {
+    var nTotal=0;
+    for(let i = 0;i<numbers.length;i++)
+    {
+      if(typeof(numbers[i]) =="object" || typeof(numbers[i]) == [])
+      {
+        return "Unsupported data type sir or ma'am";
+      } 
+      if(typeof(numbers[i]) =="number")
+      {
+        nTotal +=numbers[i]; 
+      }
+      else if(typeof(numbers[i]) =="string")
+      {
+        nTotal +=numbers[i].length; 
+      }
+      else if(typeof(numbers[i]) =="boolean")
+      {
+        if(numbers[i]==true)
+        {
+          nTotal += 1;
+        }
+        else
+        {
+          nTotal += 0;
+        }
+      }     
+    }
+    console.log(nTotal)
+    return nTotal;
+  }
+}
+
+
+
 
 // Progression #4: Calculate the average
 // Progression 4.1: Array of numbers
@@ -137,10 +180,13 @@ const wordsUnique = [
   'flour'
 ];
 
-uniqueArray(wordsUnique);
   let uniqueArr = [];
 function uniqueArray(wordsUnique)
 {
+  if(wordsUnique.length == 0)
+  {
+    return null;
+  }
  var len = wordsUnique.length;
   out=[],
   obj={};
@@ -192,6 +238,10 @@ const wordsCount = [
 function howManyTimesElementRepeated(wordsCount)
 {
   let counts = {};
+  if(wordsCount.length == 0)
+  {
+    return 0;
+  }
 
  for(let i =0; i < wordsCount.length; i++)
  { 
@@ -235,3 +285,19 @@ const matrix = [
   [24, 55, 58, 05, 66, 73, 99, 26, 97, 17],
   [21, 36, 23, 09, 75, 00, 76, 44, 20, 45]
 ];
+
+function maximumProduct(matrix)
+{
+  let len = matrix.length;
+  for(var i = 0; i < len; i++)
+  {
+    for(var j = 0; j<i; j++)
+      {
+        var element = matrix[0][0];
+        if(element ==+ matrix[i][j])
+        {
+          return 1;
+        }
+      }
+  }
+}
