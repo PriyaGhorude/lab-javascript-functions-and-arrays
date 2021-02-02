@@ -34,6 +34,7 @@ function findScaryWord(words)
   return temp;
 }
 }
+
 // Progression #3: Net Price
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 function netPrice(numbers)
@@ -58,6 +59,7 @@ function netPrice(numbers)
   return temp;
  }
 }
+
 //3.1 Add
 function add (numbers)
 {
@@ -98,8 +100,6 @@ function add (numbers)
     return nTotal;
   }
 }
-
-
 
 
 // Progression #4: Calculate the average
@@ -163,7 +163,6 @@ function averageWordLength(wordsArr)
   }
 }
 
-
 // Progression #5: Unique arrays
 const wordsUnique = [
   'bread',
@@ -180,7 +179,7 @@ const wordsUnique = [
   'flour'
 ];
 
-  let uniqueArr = [];
+let uniqueArr = [];
 function uniqueArray(wordsUnique)
 {
   if(wordsUnique.length == 0)
@@ -235,44 +234,26 @@ const wordsCount = [
   'disobedience',
   'matter'
 ];
-function howManyTimesElementRepeated(wordsCount)
+function howManyTimesElementRepeated()
 {
-  let counts = {};
+  var nCount = 0;
   if(wordsCount.length == 0)
   {
-    return 0;
+    return 0; 
   }
-
- for(let i =0; i < wordsCount.length; i++)
- { 
-    if (counts[wordsCount[i]])
+  else{
+    for(let i=0;i < wordsCount.length; i++)
     {
-      counts[wordsCount[i]] += 1
-    }
-    else
-    {
-      counts[wordsCount[i]] = 1
-    }
-  }  
-    for (let prop in counts)
-    {
-      if(counts[prop] == 0)
+      if(wordsCount[i] == wordToSearch)
       {
-        return 0;
-      }
-      else if(counts[prop] == 1)
-      { 
-        return 1;
-      }
-      else if (counts[prop] == 5)
-      {
-        return prop;
+        nCount ++;
       }
     }
+    return nCount;
+  }
 }
 
-// Progression #8: Bonus
-
+// Progression #8: Bonus Quest
 const matrix = [
   [08, 02, 22, 97, 38, 15, 00, 40, 00, 75],
   [49, 49, 99, 40, 17, 81, 18, 57, 60, 87],
